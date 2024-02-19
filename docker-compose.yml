@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: loustikarea-api
+    build:
+      context: "./server"
+      target: development
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - './server/.env'
+    depends_on:
+      - database
+    links:
+      - database
+    restart: always
+    ports:
+      - 8080:8080
+
+  front:
+    container_name: loustikarea-front
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    env_file:
+      - './client/.env'
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - api
+    restart: always
+    ports:
+      - 8081:3000
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+
+  database:
+    container_name: loustikarea-database
+    image: mysql
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loustikarea
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user_password
+    restart: always
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+      container_name: loustikarea-pma
+      image: phpmyadmin/phpmyadmin
+      links:
+        - database
+      environment:
+        PMA_HOST: database
+        PMA_PORT: 3306
+      restart: always
+      ports:
+        - 8082:80

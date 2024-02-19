@@ -1,0 +1,222 @@
+.register {
+    display: flex;
+    overflow: hidden;
+}
+
+.wallpaper {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    h1 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40%;
+        text-align: center;
+        font-weight: 200;
+        font-size: 60px;
+    }
+    h2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 55%;
+        text-align: center;
+        font-weight: 200;
+        font-size: 36px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 70%;
+    }
+}
+
+.authentification {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: 100vh;
+    & > p {
+        position: relative;
+        font-size: 18px;
+        font-weight: 200;
+        letter-spacing: 5px;
+        margin-top: 30px;
+        &::before {
+            top: 50%;
+            content: '';
+            position: absolute;
+            height: 1px;
+            left: 0;
+            width: 45%;
+            background: linear-gradient(90deg, #726EDC, #B39DE5);;
+        }
+        &::after {
+            top: 50%;
+            right: 0;
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 45%;
+            background: linear-gradient(90deg, #726EDC, #B39DE5);;
+        }
+    }
+    img {
+        width: 70px;
+        margin: 30px 20px;
+        transition: all .4s;
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+    .login {
+        font-weight: 200;
+        font-size: 18px;
+        text-decoration: none;
+        color: #000;
+        opacity: .5;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    h3 {
+        font-size: 30px;
+        font-weight: 200;
+        strong {
+            font-weight: bold;
+            color: #A892DD;
+        }
+    }
+    & > div {
+        display: flex;
+    }
+    .inputBox {
+        text-align: left;
+        width: 100%;
+        position: relative;
+        &:first-child {
+            margin-right: 20px;
+        }
+        &:hover {
+            & > span {
+                opacity: .7;
+            }
+        }
+        & > span {
+            position: absolute;
+            pointer-events: none;
+            top: 42px;
+            transition: 0.2s ease all;
+        }
+        input:focus ~ span,
+        input:not(:focus):valid ~ span {
+            top: 20px;
+            font-size: 12px;
+            color: #726EDC;
+        }
+    }
+    input {
+        width: 100%;
+        outline: none;
+        margin: 40px 0 10px;
+        border-top: none;
+        border-left: none;
+        font-size: 18px;
+        border-right: none;
+        border-image-source: linear-gradient(90deg, #726EDC, #B39DE5);
+        border-bottom-width: 1px;
+        border-image-slice: 1;
+        padding-bottom: 5px;
+        &::placeholder {
+            opacity: .5;
+            font-size: 25px;
+            font-weight: 200;
+            letter-spacing: 5px;
+        }
+    }
+    .button {
+        border: none;
+        background: linear-gradient(90deg, #726EDC, #B39DE5);
+        color: #fff;
+        height: 50px;
+        letter-spacing: 3px;
+        padding: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        outline: none;
+        margin: 50px 0 10px;
+        box-shadow: 0px 1px 5px 1px #000000;
+        transition: transform .4s;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            box-shadow: 0px 1px 5px 0px #000000;
+        }
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .wallpaper {
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .authentification {
+        img {
+            width: 50px;
+            margin: 20px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .wallpaper {
+        display: none;
+    }
+    .authentification {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        h3 {
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .authentification {
+        img {
+            width: 50px;
+            margin: 20px 10px;
+        }
+        .form > div {
+            flex-direction: column;
+        }
+    }
+}

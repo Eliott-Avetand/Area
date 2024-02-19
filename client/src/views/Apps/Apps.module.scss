@@ -1,0 +1,80 @@
+
+.apps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+    h2 {
+        font-size: 36px;
+        font-weight: 500;
+        align-self: flex-start;
+        margin-left: 150px;
+    }
+    .app {
+        border: 1px solid rgba(0, 0, 0, .4);
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+        .service {
+            display: flex;
+            align-items: center;
+            img {
+                width: 60px;
+                margin-right: 20px;
+            }
+            h4 {
+                font-size: 30px;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+        .status {
+            display: flex;
+            align-items: center;
+            h5 {
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 30px;
+            }
+            & > a > svg {
+                font-size: 30px;
+                color: #6F62B9;
+                margin-left: auto;
+                padding-right: 10px;
+                padding-left: 10px;
+                width: 30px;
+                &:hover {
+                    cursor: pointer;
+                    border-radius: 50%;
+                    background: rgba(0, 0, 0, .1);
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .apps .app {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .apps {
+        h2 {
+            align-self: center;
+            margin-left: 0;
+        }
+    }
+    .apps .app {
+        flex-direction: column;
+        .status h5 {
+            margin-bottom: 0;
+        }
+    }
+}

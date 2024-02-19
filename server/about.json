@@ -1,0 +1,53 @@
+{
+    "services": [{
+        "name": "Twitter",
+        "actions": [{
+            "name": "1",
+            "description": "[Twitter] Someone subscribed to my account"
+        }, {
+            "name": "2",
+            "description": "[Twitter] I just tweeted something"
+        }],
+        "reactions": []
+    }, {
+        "name": "Google",
+        "actions": [{
+            "name": "3",
+            "description": "[Gmail] I've just received a mail"
+        }, {
+            "name": "4",
+            "description": "[Youtube] Someone liked one of my video"
+        }, {
+            "name": "5",
+            "description": "[Youtube] Someone just subscribed to my channel"
+        }, {
+            "name": "6",
+            "description": "[Forms] A form has gotten a response"
+        }],
+        "reactions": [{
+            "name": "10",
+            "description": "[Gmail] Send a mail"
+        }, {
+            "name": "11",
+            "description": "[Gdoc] Create a document"
+        }, {
+            "name": "12",
+            "description": "[Calendar] Create an event"
+        }]
+    }, {
+        "name": "Github",
+        "actions": [{
+            "name": "7",
+            "description": "[Github] You have a new followers"
+        }]
+    }, {
+        "name": "Twitch",
+        "actions": [{
+            "name": "8",
+            "description": "[Twitch] I've just started a live"
+        }, {
+            "name": "9",
+            "description": "[Twitch] Someone followed my channel"
+        }]
+    }]
+}

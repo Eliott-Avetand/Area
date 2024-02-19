@@ -1,0 +1,72 @@
+{
+    "actions": {
+        "Twitter": {
+            "Subscriber": {
+                "message": "[Twitter] Someone subscribed to my account",
+                "data": "Account ID",
+                "id": 1
+            },
+            "Tweet": {
+                "message": "[Twitter] I just tweeted something",
+                "data": "Account ID",
+                "id": 2
+            }
+        },
+        "Google": {
+            "Mail": {
+                "message": "[Gmail] I've just received a mail",
+                "id": 3
+            },
+            "Like": {
+                "message": "[Youtube] Someone liked one of my video",
+                "data": "Video ID",
+                "id": 4
+            },
+            "Subscriber": {
+                "message": "[Youtube] Someone just subscribed to my channel",
+                "data": "Channel ID",
+                "id": 5
+            },
+            "Form": {
+                "message": "[Forms] A form has gotten a response",
+                "data": "Form ID",
+                "id": 6
+            }
+        },
+        "Github": {
+            "Follow": {
+                "message": "[Github] You have a new followers",
+                "data": "Account username",
+                "id": 7
+            }
+        },
+        "Twitch": {
+            "Live": {
+                "message": "[Twitch] Someone started a live",
+                "data": "Account username",
+                "id": 8
+            },
+            "Follow": {
+                "message": "[Twitch] Someone followed my channel",
+                "data": "Account ID",
+                "id": 9
+            }
+        }
+    },
+    "reactions": {
+        "Google": {
+            "Mail": {
+                "message": "[Gmail] Send a mail",
+                "id": 10
+            },
+            "Docs": {
+                "message": "[GDoc] Create a document",
+                "id": 11
+            },
+            "Calendar": {
+                "message": "[Calendar] Create an event",
+                "id": 12
+            }
+        }
+    }
+}

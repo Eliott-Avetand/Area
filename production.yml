@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: './server'
+      target: build & production
+    ports:
+      - 443:8080
+    env_file:
+      - './server/.env.prod'
+  front:
+    build:
+      context: './client'
+      target: build & production
+    env_file:
+      - './client/.env.prod'
+    environment:
+      CHOKIDAR_USEPOLLING: "false"

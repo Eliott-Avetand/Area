@@ -1,0 +1,10 @@
+.document {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .document {
+        margin-left: 0!important;
+    }
+}
